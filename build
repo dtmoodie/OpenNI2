@@ -1,11 +1,12 @@
+make -j4
 git submodule update --init 
 
 cd libfreenect && \
   mkdir build && \
   cd build && \
-  cmake .. -DBUILD_OPENNI2_DERIVER=ON && \
+  cmake .. -DBUILD_OPENNI2_DRIVER=ON && \
   make -j4
 
 make -j4
 
-cp libfreenect/build/lib/OpenNI2-FreenectDriver/* Bin/*-Release/OpenNI2/Drivers
+cp lib/OpenNI2-FreenectDriver/* ../../Bin/*-Release/OpenNI2/Drivers
